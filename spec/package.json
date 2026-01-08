@@ -1,0 +1,23 @@
+{
+  "name": "generic-azure-client",
+  "version": "0.1.0",
+  "type": "module",
+  "peerDependencies": {
+    "@typespec/compiler": "latest",
+    "@typespec/http": "latest",
+    "@typespec/rest": "latest",
+    "@typespec/versioning": "latest",
+    "@azure-tools/typespec-azure-core": "latest",
+    "@azure-tools/typespec-client-generator-core": "latest"
+  },
+  "devDependencies": {
+    "@typespec/compiler": "latest",
+    "@typespec/http": "latest",
+    "@typespec/rest": "latest",
+    "@typespec/versioning": "latest",
+    "@azure-tools/typespec-azure-core": "latest",
+    "@azure-tools/typespec-client-generator-core": "latest",
+    "@azure-typespec/http-client-csharp": "latest"
+  },
+  "private": true
+}
