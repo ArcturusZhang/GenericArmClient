@@ -33,3 +33,17 @@ op put(
   @query("api-version") apiVersion: string,
   @body body: unknown,
 ): unknown;
+
+@patch(#{ implicitOptionality: false })
+@convenientAPI(false)
+op patch(
+  @path(#{ allowReserved: true }) requestPath: string,
+  @query("api-version") apiVersion: string,
+  @body body: unknown,
+): unknown;
+
+@delete
+op delete(
+  @path(#{ allowReserved: true }) requestPath: string,
+  @query("api-version") apiVersion: string,
+): unknown;
