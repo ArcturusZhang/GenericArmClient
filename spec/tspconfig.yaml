@@ -1,0 +1,6 @@
+emit:
+  - "@azure-typespec/http-client-csharp"
+options:
+  "@azure-typespec/http-client-csharp":
+    emitter-output-dir: "{project-root}/../GenericAzureClient"
+    generate-convenience-methods: false

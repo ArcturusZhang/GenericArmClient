@@ -1,0 +1,12 @@
+﻿<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <RepoRoot>$(MSBuildThisFileDirectory)</RepoRoot>
+    <AzureCoreSharedSources>$(MSBuildThisFileDirectory)/Azure.Core/Shared/</AzureCoreSharedSources>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net8.0;net10.0</TargetFrameworks>
+    <RequiredTargetFrameworks>import-required-properties</RequiredTargetFrameworks>
+  </PropertyGroup>
+</Project>
