@@ -366,5 +366,77 @@ namespace AzureService
                 throw;
             }
         }
+
+        /// <summary>
+        /// [Protocol Method] Post
+        /// <list type="bullet">
+        /// <item>
+        /// <description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="requestPath"></param>
+        /// <param name="apiVersion"></param>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="requestPath"/>, <paramref name="apiVersion"/> or <paramref name="content"/> is null. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is an empty string, and was expected to be non-empty. </exception>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual Response Post(string requestPath, string apiVersion, RequestContent content, RequestContext context = null)
+        {
+            using DiagnosticScope scope = ClientDiagnostics.CreateScope("AzureServiceClient.Post");
+            scope.Start();
+            try
+            {
+                Argument.AssertNotNullOrEmpty(requestPath, nameof(requestPath));
+                Argument.AssertNotNullOrEmpty(apiVersion, nameof(apiVersion));
+                Argument.AssertNotNull(content, nameof(content));
+
+                using HttpMessage message = CreatePostRequest(requestPath, apiVersion, content, context);
+                return Pipeline.ProcessMessage(message, context);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// [Protocol Method] Post
+        /// <list type="bullet">
+        /// <item>
+        /// <description> This <see href="https://aka.ms/azsdk/net/protocol-methods">protocol method</see> allows explicit creation of the request and processing of the response for advanced scenarios. </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="requestPath"></param>
+        /// <param name="apiVersion"></param>
+        /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="requestPath"/>, <paramref name="apiVersion"/> or <paramref name="content"/> is null. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is an empty string, and was expected to be non-empty. </exception>
+        /// <exception cref="RequestFailedException"> Service returned a non-success status code. </exception>
+        /// <returns> The response returned from the service. </returns>
+        public virtual async Task<Response> PostAsync(string requestPath, string apiVersion, RequestContent content, RequestContext context = null)
+        {
+            using DiagnosticScope scope = ClientDiagnostics.CreateScope("AzureServiceClient.Post");
+            scope.Start();
+            try
+            {
+                Argument.AssertNotNullOrEmpty(requestPath, nameof(requestPath));
+                Argument.AssertNotNullOrEmpty(apiVersion, nameof(apiVersion));
+                Argument.AssertNotNull(content, nameof(content));
+
+                using HttpMessage message = CreatePostRequest(requestPath, apiVersion, content, context);
+                return await Pipeline.ProcessMessageAsync(message, context).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                scope.Failed(e);
+                throw;
+            }
+        }
     }
 }

@@ -47,3 +47,10 @@ op delete(
   @path(#{ allowReserved: true }) requestPath: string,
   @query("api-version") apiVersion: string,
 ): unknown;
+
+@post
+op post(
+  @path(#{ allowReserved: true }) requestPath: string,
+  @query("api-version") apiVersion: string,
+  @body body: unknown,
+): unknown;
