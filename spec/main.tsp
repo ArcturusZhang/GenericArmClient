@@ -30,12 +30,14 @@ model AADToken
   ]>;
 
 @get
+@convenientAPI(false)
 op get(
   @path(#{ allowReserved: true }) requestPath: string,
   @query("api-version") apiVersion: string,
 ): unknown;
 
 @put
+@convenientAPI(false)
 op put(
   @path(#{ allowReserved: true }) requestPath: string,
   @query("api-version") apiVersion: string,
@@ -51,12 +53,14 @@ op patch(
 ): unknown;
 
 @delete
+@convenientAPI(false)
 op delete(
   @path(#{ allowReserved: true }) requestPath: string,
   @query("api-version") apiVersion: string,
 ): unknown;
 
 @post
+@convenientAPI(false)
 op post(
   @path(#{ allowReserved: true }) requestPath: string,
   @query("api-version") apiVersion: string,
