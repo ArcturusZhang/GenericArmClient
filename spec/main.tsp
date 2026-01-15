@@ -5,9 +5,6 @@ import "@azure-tools/typespec-azure-core";
 import "@azure-tools/typespec-client-generator-core";
 
 using Http;
-using Rest;
-using Versioning;
-using Azure.Core;
 using Azure.ClientGenerator.Core;
 
 @useAuth(ApiKeyAuth<ApiKeyLocation.header, "api-key"> | OAuth2Auth<[]>)
