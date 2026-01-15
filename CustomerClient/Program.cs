@@ -7,9 +7,16 @@ using System.Text.Json;
 
 var azureClient = new AzureServiceClient(new AzureCliCredential(), ArmEnvironment.AzurePublicCloud);
 
-var response = await azureClient.GetAsync("/subscriptions/faa080af-c1d8-40ad-9cce-e1a450ca5b57/resourceGroups/antisch-cmtest", "2020-06-01");
+var getResponse = await azureClient.GetAsync("/subscriptions/faa080af-c1d8-40ad-9cce-e1a450ca5b57/resourceGroups/antisch-cmtest", "2020-06-01");
 
-if (response.Content != null)
+if (getResponse.Content != null)
 {
-    Console.WriteLine(response.Content.ToString());
+    Console.WriteLine(getResponse.Content.ToString());
+}
+
+var listResponse = azureClient.GetPageableAsync("/subscriptions/faa080af-c1d8-40ad-9cce-e1a450ca5b57/resourceGroups", "2020-06-01");
+
+await foreach (var item in listResponse)
+{
+    Console.WriteLine(item.ToString());
 }

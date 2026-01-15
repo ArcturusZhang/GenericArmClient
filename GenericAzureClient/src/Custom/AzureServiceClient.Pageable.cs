@@ -25,6 +25,7 @@ namespace AzureService
         /// </summary>
         /// <param name="requestPath"></param>
         /// <param name="apiVersion"></param>
+        /// <param name="options"></param>
         /// <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is an empty string, and was expected to be non-empty. </exception>
@@ -48,6 +49,7 @@ namespace AzureService
         /// </summary>
         /// <param name="requestPath"></param>
         /// <param name="apiVersion"></param>
+        /// <param name="options"></param>
         /// <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is an empty string, and was expected to be non-empty. </exception>
@@ -71,6 +73,7 @@ namespace AzureService
         /// <param name="requestPath"></param>
         /// <param name="apiVersion"></param>
         /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"></param>
         /// <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="requestPath"/>, <paramref name="apiVersion"/> or <paramref name="content"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is an empty string, and was expected to be non-empty. </exception>
@@ -96,6 +99,7 @@ namespace AzureService
         /// <param name="requestPath"></param>
         /// <param name="apiVersion"></param>
         /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"></param>
         /// <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="requestPath"/>, <paramref name="apiVersion"/> or <paramref name="content"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is an empty string, and was expected to be non-empty. </exception>
@@ -121,6 +125,7 @@ namespace AzureService
         /// <param name="requestPath"></param>
         /// <param name="apiVersion"></param>
         /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"></param>
         /// <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="requestPath"/>, <paramref name="apiVersion"/> or <paramref name="content"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is an empty string, and was expected to be non-empty. </exception>
@@ -146,6 +151,7 @@ namespace AzureService
         /// <param name="requestPath"></param>
         /// <param name="apiVersion"></param>
         /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"></param>
         /// <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="requestPath"/>, <paramref name="apiVersion"/> or <paramref name="content"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is an empty string, and was expected to be non-empty. </exception>
@@ -170,6 +176,7 @@ namespace AzureService
         /// </summary>
         /// <param name="requestPath"></param>
         /// <param name="apiVersion"></param>
+        /// <param name="options"></param>
         /// <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is an empty string, and was expected to be non-empty. </exception>
@@ -193,6 +200,7 @@ namespace AzureService
         /// </summary>
         /// <param name="requestPath"></param>
         /// <param name="apiVersion"></param>
+        /// <param name="options"></param>
         /// <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is an empty string, and was expected to be non-empty. </exception>
@@ -217,6 +225,7 @@ namespace AzureService
         /// <param name="requestPath"></param>
         /// <param name="apiVersion"></param>
         /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"></param>
         /// <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="requestPath"/>, <paramref name="apiVersion"/> or <paramref name="content"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is an empty string, and was expected to be non-empty. </exception>
@@ -242,6 +251,7 @@ namespace AzureService
         /// <param name="requestPath"></param>
         /// <param name="apiVersion"></param>
         /// <param name="content"> The content to send as the body of the request. </param>
+        /// <param name="options"></param>
         /// <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="requestPath"/>, <paramref name="apiVersion"/> or <paramref name="content"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="requestPath"/> or <paramref name="apiVersion"/> is an empty string, and was expected to be non-empty. </exception>

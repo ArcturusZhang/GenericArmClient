@@ -25,6 +25,7 @@ namespace AzureService
         /// <param name="client"> The AzureServiceClient client used to send requests. </param>
         /// <param name="requestPath"></param>
         /// <param name="apiVersion"></param>
+        /// <param name="options"></param>
         /// <param name="context"> The request options, which can override default behaviors of the client pipeline on a per-call basis. </param>
         public AzureServiceClientDeleteCollectionResult(AzureServiceClient client, string requestPath, string apiVersion, PageableOptions options, RequestContext context) : base(context?.CancellationToken ?? default)
         {

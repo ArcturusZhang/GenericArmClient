@@ -15,6 +15,12 @@ namespace AzureService
 {
     public partial class AzureServiceClient
     {
+        /// <summary>
+        /// Initializes a new instance of AzureServiceClient.
+        /// </summary>
+        /// <param name="credential"></param>
+        /// <param name="environment"></param>
+        /// <param name="options"></param>
         public AzureServiceClient(TokenCredential credential, ArmEnvironment environment, AzureServiceClientOptions options = null)
         {
             Argument.AssertNotNull(credential, nameof(credential));
