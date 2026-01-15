@@ -25,7 +25,7 @@ namespace GenericArmClient
             scope.Start();
             try
             {
-                var response = await _genericRestOperations.CreateOrUpdateByIdAsync(Id, apiVersion, content, cancellationToken).ConfigureAwait(false);
+                var response = await _genericRestOperations.CreateOrUpdateByIdAsync(requestPath, apiVersion, content, cancellationToken).ConfigureAwait(false);
                 return response;
             }
             catch (Exception e)
@@ -41,7 +41,7 @@ namespace GenericArmClient
             scope.Start();
             try
             {
-                var response = _genericRestOperations.CreateOrUpdateById(Id, apiVersion, content, cancellationToken);
+                var response = _genericRestOperations.CreateOrUpdateById(requestPath, apiVersion, content, cancellationToken);
                 return response;
             }
             catch (Exception e)
