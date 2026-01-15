@@ -7,7 +7,6 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using Azure;
 using Azure.Core.Extensions;
 using AzureService;
 
@@ -16,20 +15,6 @@ namespace Microsoft.Extensions.Azure
     /// <summary> Extension methods to add clients to <see cref="IAzureClientBuilder{TClient,TOptions}"/>. </summary>
     public static partial class AzureServiceClientBuilderExtensions
     {
-        /// <summary> Registers a <see cref="AzureServiceClient"/> client with the specified <see cref="IAzureClientBuilder{TClient,TOptions}"/>. </summary>
-        /// <param name="builder"> The builder to register with. </param>
-        /// <param name="endpoint"> Service endpoint. </param>
-        /// <param name="credential"> A credential used to authenticate to the service. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="endpoint"/> or <paramref name="credential"/> is null. </exception>
-        public static IAzureClientBuilder<AzureServiceClient, AzureServiceClientOptions> AddAzureServiceClient<TBuilder>(this TBuilder builder, Uri endpoint, AzureKeyCredential credential)
-            where TBuilder : IAzureClientFactoryBuilder
-        {
-            Argument.AssertNotNull(endpoint, nameof(endpoint));
-            Argument.AssertNotNull(credential, nameof(credential));
-
-            return builder.RegisterClientFactory<AzureServiceClient, AzureServiceClientOptions>(options => new AzureServiceClient(endpoint, credential, options));
-        }
-
         /// <summary> Registers a <see cref="AzureServiceClient"/> client with the specified <see cref="IAzureClientBuilder{TClient,TOptions}"/>. </summary>
         /// <param name="builder"> The builder to register with. </param>
         /// <param name="endpoint"> Service endpoint. </param>

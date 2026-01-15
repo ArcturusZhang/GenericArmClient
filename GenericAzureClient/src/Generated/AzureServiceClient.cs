@@ -18,11 +18,8 @@ namespace AzureService
     {
         private readonly Uri _endpoint;
         /// <summary> A credential used to authenticate to the service. </summary>
-        private readonly AzureKeyCredential _keyCredential;
-        private const string AuthorizationHeader = "api-key";
-        /// <summary> A credential used to authenticate to the service. </summary>
         private readonly TokenCredential _tokenCredential;
-        private static readonly string[] AuthorizationScopes = Array.Empty<string>();
+        private static readonly string[] AuthorizationScopes = new string[] { "https://management.azure.com/.default" };
 
         /// <summary> Initializes a new instance of AzureServiceClient for mocking. </summary>
         protected AzureServiceClient()
@@ -33,34 +30,8 @@ namespace AzureService
         /// <param name="endpoint"> Service endpoint. </param>
         /// <param name="credential"> A credential used to authenticate to the service. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="endpoint"/> or <paramref name="credential"/> is null. </exception>
-        public AzureServiceClient(Uri endpoint, AzureKeyCredential credential) : this(endpoint, credential, new AzureServiceClientOptions())
-        {
-        }
-
-        /// <summary> Initializes a new instance of AzureServiceClient. </summary>
-        /// <param name="endpoint"> Service endpoint. </param>
-        /// <param name="credential"> A credential used to authenticate to the service. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="endpoint"/> or <paramref name="credential"/> is null. </exception>
         public AzureServiceClient(Uri endpoint, TokenCredential credential) : this(endpoint, credential, new AzureServiceClientOptions())
         {
-        }
-
-        /// <summary> Initializes a new instance of AzureServiceClient. </summary>
-        /// <param name="endpoint"> Service endpoint. </param>
-        /// <param name="credential"> A credential used to authenticate to the service. </param>
-        /// <param name="options"> The options for configuring the client. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="endpoint"/> or <paramref name="credential"/> is null. </exception>
-        public AzureServiceClient(Uri endpoint, AzureKeyCredential credential, AzureServiceClientOptions options)
-        {
-            Argument.AssertNotNull(endpoint, nameof(endpoint));
-            Argument.AssertNotNull(credential, nameof(credential));
-
-            options ??= new AzureServiceClientOptions();
-
-            _endpoint = endpoint;
-            _keyCredential = credential;
-            Pipeline = HttpPipelineBuilder.Build(options, new HttpPipelinePolicy[] { new AzureKeyCredentialPolicy(_keyCredential, AuthorizationHeader) });
-            ClientDiagnostics = new ClientDiagnostics(options, true);
         }
 
         /// <summary> Initializes a new instance of AzureServiceClient. </summary>

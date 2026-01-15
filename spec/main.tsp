@@ -7,7 +7,7 @@ import "@azure-tools/typespec-client-generator-core";
 using Http;
 using Azure.ClientGenerator.Core;
 
-@useAuth(ApiKeyAuth<ApiKeyLocation.header, "api-key"> | OAuth2Auth<[]>)
+@useAuth(AADToken)
 @service(#{ title: "Generic Azure Client" })
 @server(
   "{endpoint}",
@@ -17,6 +17,17 @@ using Azure.ClientGenerator.Core;
   }
 )
 namespace AzureService;
+
+@doc("The Azure Active Directory OAuth2 Flow")
+model AADToken
+  is OAuth2Auth<[
+    {
+      type: OAuth2FlowType.implicit;
+      authorizationUrl: "https://login.microsoftonline.com/common/oauth2/authorize";
+      tokenUrl: "https://login.microsoftonline.com/common/oauth2/token";
+      scopes: ["https://management.azure.com/.default"];
+    }
+  ]>;
 
 @get
 op get(
